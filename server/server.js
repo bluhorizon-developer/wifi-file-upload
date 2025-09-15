@@ -17,7 +17,7 @@ function getLocalIP() {
     if (name.toLowerCase().includes('wi-fi')) {
       for (const net of nets[name]) {
         if (net.family === 'IPv4' && !net.internal) {
-          return net.address; // your 10.x.x.x from ipconfig
+          return net.address; // mine is 10.x.x.x from ipconfig
         }
       }
     }
@@ -84,7 +84,7 @@ app.get('/file', (req, res) => {
 app.get('/download/:filename', (req, res) => {
   const filePath = path.join(uploadDir, req.params.filename);
 
-  // set headers yourself
+  // set headers 
   res.setHeader(
     'Content-Disposition',
     `attachment; filename="${req.params.filename}"`
@@ -102,6 +102,11 @@ app.get('/download/:filename', (req, res) => {
   // pipe stream to response (chunk by chunk)
   fileStream.pipe(res);
 });
+/* ===== Apparently, when downloading files, you see '34.5/?' r.g when using chrome browser you wont see the file size. adding 
+fs.statSync(filePath).size, and adding it to the header would solve that. 
+
+ ===== The first version works and shows file size, but can't handle large files. the device freezes and download also freezes. Will 
+// update this when i learn more. */
 // ===== Start server & QR Code =====
 app.listen(PORT, ip, async () => {
   const url = `http://${ip}:${PORT}`;
