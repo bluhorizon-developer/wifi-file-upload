@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    background: #f1f0f3;
+}
+
+.logo {
+    font-size: 20px;
+    color: dodgerblue;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+main {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    height: 90vh;
+    width: 80vw;
+    overflow-y: auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    /* max-width: 400px; */
+}
+
+.content-cont {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.content-table {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 30px;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* #file-selector {
+    border: none;
+    background: #fff;
+    padding: 10px;
+    font-weight: bold;
+    border: 2px solid dodgerblue;
+} */
+
+#upload {
+    background: dodgerblue;
+    font-weight: bold;
+    color: white;
+    border: none;
+    width: 70%;
+    padding: 10px;
+}
+
+table {
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: justify;
+    border-bottom: 1px solid #dddcdc;
+    font-size: 15px;
+    color: #333;
+    height: 50px;
+}
+
+td button {
+    cursor: pointer;
+    background: dodgerblue;
+    color: #fff;
+    font-weight: normal;
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+
+th {
+    background: #f9f9f9;
+    font-weight: 700;
+    color: #666;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+tr a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: green;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.upload-feedback {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(7px) saturate(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.upload-feedback.active {
+    display: flex;
+}
+
+.feedbacks {
+    background: white;
+    box-shadow: var(--box-shadow);
+    padding: 50px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.feedbacks div {
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid gray;
+}
+
+.feedbacks .action {
+    all: unset;
+    width: 100%;
+}
+
+.action button {
+    background: dodgerblue;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    width: 200px;
+    padding: 10px;
+    color: white;
+}
+
+.feedback h3 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    main {
+        width: 98%;
+    }
+
+    th,
+    td {
+        width: fit-content;
+        white-space: nowrap;
+    }
+
+    .upload-feedback {
+        width: 95%;
+    }
+
+    .action button {
+        width: 100%;
+    }
+}
