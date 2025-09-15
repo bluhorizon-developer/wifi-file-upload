@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="/icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="upload-feedback">
+        <div class="feedbacks">
+            <div class="feedback">
+
+            </div>
+            <div class="action">
+                <button class="closeUpload">Finish</button>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="logo">Bluhorizon Wifi File Transfer</div>
+    </header>
+    <main>
+        <section>
+            <div class="content">
+                <form id="file-submission-form">
+                    <input type="file" name="file" id="file-upload"
+                        accept=".pdf,.docx,.doc,.jpg,.jpeg,.png,.txt,.zip,.txt,.mp4,.mp3,.mkv,.m4a,.3gpp" multiple>
+                    <button id="upload">Upload</button>
+                </form>
+            </div>
+            <div class="content-cont">
+                <div class="content-table">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>File Type</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="documents">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="content-cont">
+                <h2 style="text-align:center;">Download Files</h2>
+                <div class="content-table">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="download-files">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./apps.js"></script>
+    <script src="./sw.js"></script>
+</body>
+
+</html>
